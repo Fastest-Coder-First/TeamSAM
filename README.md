@@ -15,10 +15,12 @@ Given a location, the Command Line Interface displays the weather forecast for t
 We have demonstrated three possibles cases while implementing the weathr forecast:
 
 1. Passing city name
+   
 ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output1)
 
 
 2. User (Current) location
+   
 ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output2)
 
 
