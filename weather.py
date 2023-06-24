@@ -1,5 +1,4 @@
 import requests
-import json
 import os
 import sys
 
@@ -42,11 +41,7 @@ def get_weather(city):
     humidity = data["main"]["humidity"]
 
     # Get wind speed
-    wind_speed = data["wind"]["speed"]
-
-    # Get sunrise and sunset
-    sunrise = data["sys"]["sunrise"]
-    sunset = data["sys"]["sunset"]    
+    wind_speed = data["wind"]["speed"]  
 
     # Get weather icon
     weather_icon = data["weather"][0]["icon"]
@@ -60,8 +55,7 @@ def get_weather(city):
     # Return weather data
     return {"Country": country, "City": city_name, 
             "Weather Description": weather_description, 
-            "Temperature": temp, "Humidity": humidity, "Wind Speed": wind_speed, 
-            "Sunrise": sunrise, "Sunset": sunset, 
+            "Temperature": temp, "Humidity": humidity, "Wind Speed": wind_speed,
             "Weather Icon URL": weather_icon_url, "Weather Icon Description": weather_icon_description}
 
 
@@ -81,8 +75,6 @@ def display_weather(city):
     print("Temperature: {}".format(weather_data["Temperature"]))
     print("Humidity: {}".format(weather_data["Humidity"]))
     print("Wind Speed: {}".format(weather_data["Wind Speed"]))
-    print("Sunrise: {}".format(weather_data["Sunrise"]))
-    print("Sunset: {}".format(weather_data["Sunset"]))
     display_icon(weather_data["Weather Icon URL"])
     print("Weather Icon Description: {}".format(weather_data["Weather Icon Description"]))
 
@@ -111,28 +103,25 @@ if __name__ == "__main__":
     # Check if city name is provided
     if len(sys.argv) < 2:
         print("Missing required <city_name> argument.")
-        print("Enter: \n1 - To use your current location \n2 - To enter comma separated city name(s)")
+        print("Enter: \n1 - To use your current location \n2 - To enter city name")
 
         # Get user choice
         choice = input()
 
         if choice == "1":
             location = get_location()
-            cities = [location["city"]]
-            
+            city = location["city"]
+
         elif choice == "2":
-            cities = list(input().split(","))
-            cities = [city.strip() for city in cities]
+            city = input()
 
         else:
             print("Invalid choice.")
             sys.exit(1)
     
     else:
-        cities = sys.argv[1:]
-    
+        city = " ".join(sys.argv[1:])
+
     # Display weather for each city
-    for city in cities:
-        display_weather(city)
-        print()
+    display_weather(city)
 
