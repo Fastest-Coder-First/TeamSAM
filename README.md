@@ -58,7 +58,7 @@ We have demonstrated four possibles scenarios while implementing the weather for
    
       ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image4)
 
-## Architectural Description
+## Architectural Description 🔨
 
 - Import the required modules
 - Get the API Key and the city name from the user
