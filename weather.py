@@ -88,10 +88,28 @@ def display_weather(city):
 
 
 
+#function to get ip address
+def get_ip():
+    response = requests.get('https://api64.ipify.org?format=json').json()
+    return response["ip"]
+
+#function to get location
+def get_location():
+    ip_address = get_ip()
+    response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+    location_data = {
+        "ip": ip_address,
+        "city": response.get("city"),
+        "region": response.get("region"),
+        "country": response.get("country_name")
+    }
+    return location_data
+
 # Test
 if __name__ == "__main__":
     display_weather("London")
-
+    location = get_location()
+    display_weather(location['city'])
 
 '''if len(sys.argv) < 2:
     print("Usage: python weather.py <city_name>")
