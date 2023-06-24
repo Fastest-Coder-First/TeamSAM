@@ -67,7 +67,7 @@ We have demonstrated four possibles scenarios while implementing the weather for
 - Check the status code of obtained data
 - Parse the JSON data and extract all the relevant information
 - Display the information to the user
-      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image4)
+      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Block_Diagram)
 
 ## Usage of GitHub CoPilot 🤖
 
