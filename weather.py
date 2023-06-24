@@ -1,11 +1,11 @@
 import requests
 import os
 import sys
-import urllib.error
 import click
-from PIL import Image
 from io import BytesIO
-from colorama import Fore, Back, Style
+from colorama import Fore
+
+
 # Function that calls openweather API
 def get_weather(city):
 
@@ -23,11 +23,11 @@ def get_weather(city):
     # Check if API call was successful
     if st_code != 200:      
         if st_code == 404:
-            print(Fore.RED + "City not found.")
+            print(Fore.RED + "City not found." + Fore.RESET)
         elif st_code == 401:
-            print(Fore.RED + "Missing/Invalid API key.")
+            print(Fore.RED + "Missing/Invalid API key." + Fore.RESET)
         else:
-            print(Fore.RED + "Something went wrong.")
+            print(Fore.RED + "Something went wrong." + Fore.RESET)
         return None
 
     # Get country and city name
@@ -46,23 +46,11 @@ def get_weather(city):
     humidity = data["main"]["humidity"]
     wind_speed = data["wind"]["speed"]  
 
-    # Get weather icon and URL and description
-    weather_icon = data["weather"][0]["icon"]
-    weather_icon_url = "http://openweathermap.org/img/w/{}.png".format(weather_icon)
-    weather_icon_description = data["weather"][0]["main"]
 
     # Return weather data
     return {"Country": country, "City": city_name, 
             "Weather Description": weather_description, 
-            "Temperature": temp, "Humidity": humidity, "Wind Speed": wind_speed,
-            "Weather Icon URL": weather_icon_url, "Weather Icon Description": weather_icon_description}
-
-
-# To view the image icon
-def display_icon(icon_url):
-    response = requests.get(icon_url)
-    img = Image.open(BytesIO(response.content))
-    img.show()
+            "Temperature": temp, "Humidity": humidity, "Wind Speed": wind_speed}
 
 
 # To display the weather data
@@ -72,18 +60,16 @@ def display_weather(city):
         if weather_data is None:
             return
 
-        print(Fore.GREEN+"City: {}, {}".format(weather_data["Country"],weather_data["City"]))
-        print(Fore.CYAN+"Weather Description: {}".format(weather_data["Weather Description"]))
-        print(Fore.WHITE+ "Temperature: {}".format(weather_data["Temperature"]))
-        print(Fore.BLUE+"Humidity: {}".format(weather_data["Humidity"]))
-        print(Fore.CYAN + "Wind Speed: {}".format(weather_data["Wind Speed"]))
-        display_icon(weather_data["Weather Icon URL"])
-        print(Fore.WHITE+"Weather Icon Description: {}".format(weather_data["Weather Icon Description"]))
+        print(Fore.GREEN+"City: {}, {}".format(weather_data["Country"],weather_data["City"]) + Fore.RESET)
+        print(Fore.CYAN+"Weather Description: {}".format(weather_data["Weather Description"]) + Fore.RESET)
+        print(Fore.WHITE+ "Temperature: {} °C".format(weather_data["Temperature"]) + Fore.RESET)
+        print(Fore.BLUE+"Humidity: {} %".format(weather_data["Humidity"]) + Fore.RESET)
+        print(Fore.CYAN + "Wind Speed: {} km/h".format(round(weather_data["Wind Speed"] * 18 / 5)) + Fore.RESET)
 
     except KeyError:
-        print(Fore.RED + "Error getting weather data.")
+        print(Fore.RED + "Error getting weather data." + Fore.RESET)
     except TypeError:
-        print(Fore.RED + "Error getting weather data for given city.")
+        print(Fore.RED + "Error getting weather data for given city." + Fore.RESET)
     
 
 # Function to get IP address
@@ -104,13 +90,18 @@ def get_location():
     }
     return location_data
 
-# Main
-if __name__ == "__main__":
 
-    # Check if city name is provided
-    if len(sys.argv) < 2:
-        print(Fore.RED + "Missing required <city_name> argument.")
-        print(Fore.YELLOW + "Enter: \n1 - To use your current location \n2 - To enter city name")
+# Main
+@click.command()
+@click.option("--city", help="Specify the city for which you want to get weather information.")
+@click.option("--current-location", is_flag=True, help="Use your current location.")
+def main(city, current_location):
+    if current_location:
+        location = get_location()
+        city = location["city"]
+    elif not city:
+        print(Fore.RED + "Missing required --city argument or --current-location flag." + Fore.RESET)
+        print(Fore.YELLOW + "Enter: \n1 - To use your current location \n2 - To enter city name" + Fore.RESET)
 
         # Get user choice
         choice = input()
@@ -123,11 +114,11 @@ if __name__ == "__main__":
             city = input()
 
         else:
-            print(Fore.RED + "Invalid choice.")
+            print(Fore.RED + "Invalid choice." + Fore.RESET)
             sys.exit(1)
-    
-    else:
-        city = " ".join(sys.argv[1:])
-
-    # Display weather for each city
+        
     display_weather(city)
+
+
+if __name__ == "__main__":
+    main()
