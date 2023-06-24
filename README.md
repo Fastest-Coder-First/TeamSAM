@@ -27,8 +27,8 @@ Problem statement : Weather Forecasting Tool - Create a command line tool that a
 ```git clone https://github.com/Fastest-Coder-First/TeamSAM.git```
 - To install required dependencies -
 ```pip install -r requirements.txt```
-- Head on to - https://openweathermap.org/api to get your own API-KEY.
-Enter it into the file weather.py at the designated variable.
+- Head on to - https://openweathermap.org/api to get your own API-KEY and
+enter it into the file weather.py at the designated variable.
 
 ## API Key 🔐
 
