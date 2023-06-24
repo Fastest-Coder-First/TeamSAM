@@ -120,9 +120,9 @@ if __name__ == "__main__":
             location = get_location()
             cities = [location["city"]]
             
-
         elif choice == "2":
             cities = list(input().split(","))
+            cities = [city.strip() for city in cities]
 
         else:
             print("Invalid choice.")
