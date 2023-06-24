@@ -5,11 +5,7 @@ Problem statement : Weather Forecasting Tool - Create a command line tool that a
 
 # Description
 Given a location, the Command Line Interface displays the weather forecast for the place using the Open Weather Map API
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="[YOUR-DARKMODE-IMAGE](https://media.discordapp.net/attachments/1122028237258764380/1122119760629473330/Screenshot_2023-06-24_at_4.32.57_PM.png?width=1440&height=225)https://media.discordapp.net/attachments/1122028237258764380/1122119760629473330/Screenshot_2023-06-24_at_4.32.57_PM.png?width=1440&height=225">
- 
-</picture>
-
+https://cdn.discordapp.com/attachments/1122028237258764380/1122119760629473330/Screenshot_2023-06-24_at_4.32.57_PM.png
 # Functionality
 # Installions
 # Demo
