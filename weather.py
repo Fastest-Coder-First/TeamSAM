@@ -8,31 +8,27 @@ from io import BytesIO
 
 # Function that calls openweather API
 def get_weather(city):
-    # API Key and URL
-    try:
-        api_key = ''
-        url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, api_key)
-    except urllib.error.URLError:
-        print("Error hitting the API.")
-        sys.exit(1)
 
+    # API Key and URL
+    api_key = ''
+    url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, api_key)
+        
     # API call
     response = requests.get(url)
 
     # Convert response to json
     data = response.json()
-    
-    # Check if the city exists
-    if data["cod"] == 404:
-        return "City not found."
-    
-    # Check if API key is valid
-    if data["cod"] == 401:
-        return "Missing/Invalid API key."
+    st_code = data["cod"]
 
-    # Handle web error
-    if data["cod"] != 200:
-        return "Error hitting the API."
+    # Check if API call was successful
+    if st_code != 200:      
+        if st_code == 404:
+            print("City not found.")
+        elif st_code == 401:
+            print("Missing/Invalid API key.")
+        else:
+            print("Something went wrong.")
+        return None
 
     # Get country and city name
     country = data["sys"]["country"]
@@ -46,19 +42,13 @@ def get_weather(city):
     temp = temp - 273.15
     temp = round(temp, 2)
 
-    # Get humidity
+    # Get humidity and windspeed
     humidity = data["main"]["humidity"]
-
-    # Get wind speed
     wind_speed = data["wind"]["speed"]  
 
-    # Get weather icon
+    # Get weather icon and URL and description
     weather_icon = data["weather"][0]["icon"]
-
-    # Get weather icon url
     weather_icon_url = "http://openweathermap.org/img/w/{}.png".format(weather_icon)
-
-    # Get weather icon description
     weather_icon_description = data["weather"][0]["main"]
 
     # Return weather data
@@ -79,6 +69,8 @@ def display_icon(icon_url):
 def display_weather(city):
     try:
         weather_data = get_weather(city)
+        if weather_data is None:
+            return
 
         print("City: {}, {}".format(weather_data["Country"], weather_data["City"]))
         print("Weather Description: {}".format(weather_data["Weather Description"]))
@@ -87,13 +79,14 @@ def display_weather(city):
         print("Wind Speed: {}".format(weather_data["Wind Speed"]))
         display_icon(weather_data["Weather Icon URL"])
         print("Weather Icon Description: {}".format(weather_data["Weather Icon Description"]))
+
     except KeyError:
         print("Error getting weather data.")
     except TypeError:
         print("Error getting weather data for given city.")
     
 
-# Function to get ip address
+# Function to get IP address
 def get_ip():
     response = requests.get('https://api64.ipify.org?format=json').json()
     return response["ip"]
