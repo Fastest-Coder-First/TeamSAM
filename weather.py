@@ -93,7 +93,7 @@ def get_location():
 
 # Main
 @click.command()
-@click.option("--city", help="Specify the city for which you want to get weather information.")
+@click.option("--city", metavar="CITY_NAME", help="Specify the city for which you want to get weather information.")
 @click.option("--current-location", is_flag=True, help="Use your current location.")
 def main(city, current_location):
     if current_location:
