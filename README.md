@@ -60,6 +60,14 @@ We have demonstrated four possibles scenarios while implementing the weather for
 
 ## Architectural Description
 
+- Import the required modules
+- Get the API Key and the city name from the user
+- If specified obtain user location using their IP address
+- Construct the API URL and make a request
+- Check the status code of obtained data
+- Parse the JSON data and extract all the relevant information
+- Display the information to the user
+
 ## Usage of GitHub CoPilot 🤖
 
 GitHub CoPilot has been used as a basis for our code implementation
