@@ -4,6 +4,10 @@ import requests
 import json
 import os
 
+from PIL import Image
+
+from io import BytesIO
+
 def weather(city):
 
     # API Key and URL
@@ -69,3 +73,22 @@ def weather(city):
             sunrise, "sunset": sunset, "timezone": timezone, "city_name": city_name, "coordinates": coordinates, "weather_icon_url": 
             weather_icon_url, "weather_icon_description": weather_icon_description }
 
+
+
+# To view the image icon
+def imaginy(city):
+    weather_data = weather(city)
+    weather_icon_url = weather_data["weather_icon_url"]
+    print(weather_data)
+    response = requests.get(weather_icon_url)
+    img = Image.open(BytesIO(response.content))
+    img.show()
+
+
+if len(sys.argv) < 2:
+    print("Usage: python weather.py <city_name>")
+    sys.exit(1)
+
+# Get the city name from the command line argument
+city_name = sys.argv[1]
+imaginy(city_name)
