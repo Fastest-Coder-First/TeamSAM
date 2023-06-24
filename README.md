@@ -12,6 +12,8 @@ Given a location, the Command Line Interface displays the weather forecast for t
 # Functionality
 # Installions
 # Demo
+We have demonstrated four possibles cases while implementing the weathr forecast
+1. Giving 
 # Usage of GitHub CoPilot
 # Acknowledgments 
 # Open to contributions
