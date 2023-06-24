@@ -9,7 +9,7 @@ from io import BytesIO
 # Function that calls openweather API
 def get_weather(city):
     # API Key and URL
-    api_key = 'ce5672977fa34059f0b8992a98123ca2'
+    api_key = ''
     url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, api_key)
 
     # API call
