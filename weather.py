@@ -87,13 +87,13 @@ def display_weather(city):
     print("Weather Icon Description: {}".format(weather_data["Weather Icon Description"]))
 
 
-
-#function to get ip address
+# Ffunction to get ip address
 def get_ip():
     response = requests.get('https://api64.ipify.org?format=json').json()
     return response["ip"]
 
-#function to get location
+
+# Function to get location
 def get_location():
     ip_address = get_ip()
     response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
@@ -105,16 +105,34 @@ def get_location():
     }
     return location_data
 
-# Test
+# Main
 if __name__ == "__main__":
-    display_weather("London")
-    location = get_location()
-    display_weather(location['city'])
 
-'''if len(sys.argv) < 2:
-    print("Usage: python weather.py <city_name>")
-    sys.exit(1)
+    # Check if city name is provided
+    if len(sys.argv) < 2:
+        print("Missing required <city_name> argument.")
+        print("Enter: \n1 - To use your current location \n2 - To enter comma separated city name(s)")
 
-# Get the city name from the command line argument
-city_name = sys.argv[1]
-imaginy(city_name)'''
+        # Get user choice
+        choice = input()
+
+        if choice == "1":
+            location = get_location()
+            cities = [location["city"]]
+            
+
+        elif choice == "2":
+            cities = list(input().split(","))
+
+        else:
+            print("Invalid choice.")
+            sys.exit(1)
+    
+    else:
+        cities = sys.argv[1:]
+    
+    # Display weather for each city
+    for city in cities:
+        display_weather(city)
+        print()
+
