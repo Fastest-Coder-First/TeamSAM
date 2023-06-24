@@ -61,10 +61,10 @@ def display_weather(city):
             return
 
         print(Fore.GREEN+"City: {}, {}".format(weather_data["Country"],weather_data["City"]) + Fore.RESET)
-        print(Fore.CYAN+"Weather Description: {}".format(weather_data["Weather Description"]) + Fore.RESET)
-        print(Fore.WHITE+ "Temperature: {} °C".format(weather_data["Temperature"]) + Fore.RESET)
-        print(Fore.BLUE+"Humidity: {} %".format(weather_data["Humidity"]) + Fore.RESET)
-        print(Fore.CYAN + "Wind Speed: {} km/h".format(round(weather_data["Wind Speed"] * 18 / 5)) + Fore.RESET)
+        print(Fore.MAGENTA+"Weather Description: {}".format(weather_data["Weather Description"]) + Fore.RESET)
+        print(Fore.BLUE+ "Temperature: {} °C".format(weather_data["Temperature"]) + Fore.RESET)
+        print(Fore.CYAN+"Humidity: {} %".format(weather_data["Humidity"]) + Fore.RESET)
+        print(Fore.WHITE + "Wind Speed: {} km/h".format(round(weather_data["Wind Speed"] * 18 / 5)) + Fore.RESET)
 
     except KeyError:
         print(Fore.RED + "Error getting weather data." + Fore.RESET)
@@ -118,6 +118,7 @@ def main(city, current_location):
             sys.exit(1)
         
     display_weather(city)
+    print()
 
 
 if __name__ == "__main__":
