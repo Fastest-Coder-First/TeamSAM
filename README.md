@@ -60,7 +60,7 @@ We have demonstrated four possibles scenarios while implementing the weather for
    
 ## Usage of GitHub CoPilot 🤖
 
-GitHub CoPilot has been used to the basis of our code implementation
+GitHub CoPilot has been used as a basis for our code implementation
 
 - To make API calls to obtain weather parameters
 - For error handling of HTTP Requests
