@@ -3,13 +3,13 @@ A repository for Fastest Coder First Hackathon
 
 Problem statement : Weather Forecasting Tool - Create a command line tool that accepts a city's name and returns the current weather forecast. Leverage OpenWeatherMap API to fetch weather data and parse it using Python. Your solution should demonstrate how GitHub Copilot can help you with API usage, data parsing, and error handling.
 
-## Description
+## Description  🌞
 'mauSAM', is a simple yet elegant Python based command line tool that accepts a city's name and returns the current weather forecast. It uses OpenWeatherMap API and GitHub's CoPilot to provide a user-friendly experience.
 
 ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/sam)
 
 
-## Functionalities
+## Functionalities 🧰
 1. Can forecast the weather of any city of your choice or your current location
    
 2. Displays the following weather information:
@@ -20,7 +20,7 @@ Problem statement : Weather Forecasting Tool - Create a command line tool that a
    - Humidity (Percentage)
    - Wind Speed (Kmph)
 
-## Installation
+## Installation ✅
 
 - Ensure you have Python 3.x installed.
 - Clone the repository - 
@@ -30,11 +30,11 @@ Problem statement : Weather Forecasting Tool - Create a command line tool that a
 - Head on to - https://openweathermap.org/api to get your own API-KEY.
 Enter it into the file weather.py at the designated variable.
 
-## API Key
+## API Key 🔐
 
 To retrieve weather data, the application uses the OpenWeather API. You need to provide your own API key by replacing the api_key variable in the code with your API key. You can sign up and obtain an API key from the [OpenWeather website](https://openweathermap.org/).
 
-## Demo
+## Demo ✨
 
 We have demonstrated four possibles scenarios while implementing the weather forecasting tool:
 
@@ -56,7 +56,7 @@ We have demonstrated four possibles scenarios while implementing the weather for
    
       ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image4)
    
-## Usage of GitHub CoPilot
+## Usage of GitHub CoPilot 🤖
 
 GitHub CoPilot has been used to the basis of our code implementation
 
@@ -64,10 +64,17 @@ GitHub CoPilot has been used to the basis of our code implementation
 - For error handling of HTTP Requests
 - Aided in passing the data to obtain necessary values
 - Enabled us to implement the 'click' command to handle user's choices
-## Acknowledgments 
+  
+## Acknowledgments 📝
 
 - This application uses the [OpenWeather API](https://openweathermap.org/) to retrieve weather data.
 
 - GitHub CoPilot for our code implementation
 
-## Open to contributions
+## Contributers 🌻
+
+   Saakshi Sanjeev
+
+   Arati Menon
+
+   Maalavika Srikantan
