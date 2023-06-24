@@ -72,7 +72,7 @@ def display_weather(city):
         if weather_data is None:
             return
 
-        print(Fore.BLUE+"City: {}, {}".format(weather_data["Country"],weather_data["City"]))
+        print(Fore.GREEN+"City: {}, {}".format(weather_data["Country"],weather_data["City"]))
         print(Fore.CYAN+"Weather Description: {}".format(weather_data["Weather Description"]))
         print(Fore.WHITE+ "Temperature: {}".format(weather_data["Temperature"]))
         print(Fore.BLUE+"Humidity: {}".format(weather_data["Humidity"]))
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     # Check if city name is provided
     if len(sys.argv) < 2:
         print(Fore.RED + "Missing required <city_name> argument.")
-        print(Fore.GREEN + "Enter: \n1 - To use your current location \n2 - To enter city name")
+        print(Fore.YELLOW + "Enter: \n1 - To use your current location \n2 - To enter city name")
 
         # Get user choice
         choice = input()
