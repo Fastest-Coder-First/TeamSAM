@@ -5,8 +5,8 @@ Problem statement : Weather Forecasting Tool - Create a command line tool that a
 
 # Description
 Given a location, the Command Line Interface displays the weather forecast for the place using the Open Weather Map API
-![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/op1)
 
+![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/sam)
 
 
 # Functionality
