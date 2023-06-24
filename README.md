@@ -10,8 +10,10 @@ Given a location, the Command Line Interface displays the weather forecast for t
 
 
 ## Functionalities
-1. Choice between any city and current location of the user
-2. Display the following weather information:
+1. Can forecast the weather of any city of your choice or your current location
+   
+2. Displays the following weather information:
+   
    - City and Country
    - Weather Description (Scattered clouds, haze, etc)
    - Temperature (Celsius scale)
@@ -19,6 +21,7 @@ Given a location, the Command Line Interface displays the weather forecast for t
    - Wind Speed (Kmph)
 
 ## Installation
+
 - Ensure you have Python 3.x installed.
 - Clone the repository - 
 ```git clone https://github.com/Fastest-Coder-First/TeamSAM.git```
@@ -28,31 +31,37 @@ Given a location, the Command Line Interface displays the weather forecast for t
 Enter it into the file weather.py at the designated variable.
 
 ## API Key
+
 To retrieve weather data, the application uses the OpenWeather API. You need to provide your own API key by replacing the api_key variable in the code with your API key. You can sign up and obtain an API key from the [OpenWeather website](https://openweathermap.org/).
 
 ## Demo
-We have demonstrated three possibles cases while implementing the weathr forecast:
+
+We have demonstrated four possibles scenarios while implementing the weather forecasting tool:
 
 1. Passing city name
    
-![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output1)
+      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image1)
 
 
 2. User (Current) location
    
-![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output2)
+      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image2)
 
 
-3. Passing empty arguments
+3. City name with empty flags
+
+      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image3)
+  
+4. Current User Location with empty flags
    
-   a) City
-   
-   ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output3)
-   
-   b) Current User Location
-   
-   ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Output4)
+      ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image4)
    
 ## Usage of GitHub CoPilot
+
 ## Acknowledgments 
+
+- This application uses the [OpenWeather API](https://openweathermap.org/) to retrieve weather data.
+
+- GitHub CoPilot for our code implementation
+
 ## Open to contributions
