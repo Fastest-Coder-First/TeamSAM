@@ -57,7 +57,9 @@ We have demonstrated four possibles scenarios while implementing the weather for
 4. Current User Location with empty flags
    
       ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/Image4)
-   
+
+## Architectural Description
+
 ## Usage of GitHub CoPilot 🤖
 
 GitHub CoPilot has been used as a basis for our code implementation
