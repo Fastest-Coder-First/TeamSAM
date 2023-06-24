@@ -33,6 +33,7 @@ enter it into the file weather.py at the designated variable.
 ## API Key 🔐
 
 To retrieve weather data, the application uses the OpenWeather API. You need to provide your own API key by replacing the api_key variable in the code with your API key.
+
 You can sign up and obtain an API key from the [OpenWeather website](https://openweathermap.org/).
 
 ## Demo ✨
