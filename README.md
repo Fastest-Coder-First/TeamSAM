@@ -4,7 +4,7 @@ A repository for Fastest Coder First Hackathon
 Problem statement : Weather Forecasting Tool - Create a command line tool that accepts a city's name and returns the current weather forecast. Leverage OpenWeatherMap API to fetch weather data and parse it using Python. Your solution should demonstrate how GitHub Copilot can help you with API usage, data parsing, and error handling.
 
 ## Description
-Given a location, the Command Line Interface displays the weather forecast for the place using the Open Weather Map API
+'mauSAM', is a simple yet elegant Python based command line tool that accepts a city's name and returns the current weather forecast. It uses OpenWeatherMap API and GitHub's CoPilot to provide a user-friendly experience.
 
 ![alt Weather](https://github.com/Fastest-Coder-First/TeamSAM/blob/main/Output_Screenshots/sam)
 
@@ -58,6 +58,12 @@ We have demonstrated four possibles scenarios while implementing the weather for
    
 ## Usage of GitHub CoPilot
 
+GitHub CoPilot has been used to the basis of our code implementation
+
+- To make API calls to obtain weather parameters
+- For error handling of HTTP Requests
+- Aided in passing the data to obtain necessary values
+- Enabled us to implement the 'click' command to handle user's choices
 ## Acknowledgments 
 
 - This application uses the [OpenWeather API](https://openweathermap.org/) to retrieve weather data.
